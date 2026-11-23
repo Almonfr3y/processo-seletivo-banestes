@@ -1,0 +1,56 @@
+.esqueleto {
+  display: grid;
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-4);
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  background: var(--cor-superficie);
+}
+
+.textos {
+  display: grid;
+  flex: 1;
+  gap: var(--espaco-2);
+}
+
+.bloco {
+  display: block;
+  border-radius: var(--raio-sm);
+  background: linear-gradient(90deg, var(--cor-borda) 25%, var(--cor-superficie-alt) 50%, var(--cor-borda) 75%);
+  background-size: 200% 100%;
+  animation: brilho 1.4s ease-in-out infinite;
+}
+
+.circulo {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raio-total);
+}
+
+.textoLongo {
+  width: min(280px, 70%);
+  height: 14px;
+}
+
+.textoCurto {
+  width: min(160px, 45%);
+  height: 12px;
+}
+
+@keyframes brilho {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

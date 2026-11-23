@@ -1,0 +1,57 @@
+/* Estilos de botão compartilhados por <button> e por links com aparência de botão. */
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-2);
+  min-height: 44px; /* área de toque mínima recomendada */
+  padding: var(--espaco-2) var(--espaco-4);
+  border: 1px solid transparent;
+  border-radius: var(--raio-md);
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--transicao),
+    border-color var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.botao:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.primario {
+  background: var(--cor-primaria);
+  color: var(--cor-sobre-primaria);
+  box-shadow: var(--sombra-sm);
+}
+
+.primario:hover:not(:disabled) {
+  background: var(--cor-primaria-forte);
+}
+
+.secundario {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+  border-color: var(--cor-borda-forte);
+}
+
+.secundario:hover:not(:disabled) {
+  background: var(--cor-superficie-alt);
+  border-color: var(--cor-primaria);
+}
+
+.fantasma {
+  background: transparent;
+  color: var(--cor-primaria);
+}
+
+.fantasma:hover:not(:disabled) {
+  background: var(--cor-primaria-suave);
+}

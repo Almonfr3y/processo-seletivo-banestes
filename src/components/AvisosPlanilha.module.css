@@ -1,0 +1,31 @@
+.avisos {
+  border: 1px solid var(--cor-borda);
+  border-left: 4px solid var(--cor-alerta);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie);
+  font-size: var(--texto-sm);
+}
+
+.resumo {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  min-height: 44px;
+  padding: var(--espaco-2) var(--espaco-4);
+  color: var(--cor-alerta);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.explicacao,
+.lista {
+  margin: 0;
+  padding: 0 var(--espaco-4) var(--espaco-3);
+  color: var(--cor-texto-suave);
+}
+
+.lista {
+  display: grid;
+  gap: var(--espaco-1);
+  padding-left: var(--espaco-6);
+}

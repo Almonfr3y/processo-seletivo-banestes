@@ -1,0 +1,55 @@
+.caixa {
+  display: flex;
+  gap: var(--espaco-3);
+  padding: var(--espaco-4);
+  border: 1px solid;
+  border-radius: var(--raio-md);
+}
+
+.icone {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.corpo {
+  display: grid;
+  gap: var(--espaco-1);
+  min-width: 0;
+}
+
+.titulo {
+  font-weight: 650;
+}
+
+.texto {
+  color: var(--cor-texto);
+  font-size: var(--texto-sm);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-2);
+  margin-top: var(--espaco-2);
+}
+
+.sucesso {
+  background: var(--cor-sucesso-suave);
+  border-color: var(--cor-sucesso);
+  color: var(--cor-sucesso);
+}
+.alerta {
+  background: var(--cor-alerta-suave);
+  border-color: var(--cor-alerta);
+  color: var(--cor-alerta);
+}
+.erro {
+  background: var(--cor-erro-suave);
+  border-color: var(--cor-erro);
+  color: var(--cor-erro);
+}
+.info {
+  background: var(--cor-primaria-suave);
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}

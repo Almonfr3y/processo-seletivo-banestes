@@ -1,0 +1,70 @@
+.avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--raio-total);
+  font-size: var(--texto-sm);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.grande {
+  width: 72px;
+  height: 72px;
+  font-size: var(--texto-xl);
+}
+
+/* Tons claros no tema claro e escuros no tema escuro, mantendo contraste */
+.azul {
+  background: #dbeafe;
+  color: #1e3a8a;
+}
+.verde {
+  background: #d1fae5;
+  color: #065f46;
+}
+.roxo {
+  background: #ede9fe;
+  color: #4c1d95;
+}
+.laranja {
+  background: #ffedd5;
+  color: #7c2d12;
+}
+.rosa {
+  background: #fce7f3;
+  color: #831843;
+}
+.ciano {
+  background: #cffafe;
+  color: #164e63;
+}
+
+@media (prefers-color-scheme: dark) {
+  .azul {
+    background: #1e3a8a;
+    color: #dbeafe;
+  }
+  .verde {
+    background: #065f46;
+    color: #d1fae5;
+  }
+  .roxo {
+    background: #4c1d95;
+    color: #ede9fe;
+  }
+  .laranja {
+    background: #7c2d12;
+    color: #ffedd5;
+  }
+  .rosa {
+    background: #831843;
+    color: #fce7f3;
+  }
+  .ciano {
+    background: #164e63;
+    color: #cffafe;
+  }
+}
