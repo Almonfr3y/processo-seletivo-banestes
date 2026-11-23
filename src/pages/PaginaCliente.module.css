@@ -1,0 +1,181 @@
+.mensagem {
+  margin-bottom: var(--espaco-4);
+}
+
+.voltar {
+  justify-self: start;
+  margin-left: calc(var(--espaco-3) * -1);
+}
+
+/* ---------- Cabeçalho do cliente ---------- */
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1);
+  margin-top: var(--espaco-1);
+}
+
+/* ---------- Resumo financeiro ---------- */
+
+.resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--espaco-3);
+  margin-bottom: var(--espaco-5);
+}
+
+.indicador {
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-sm);
+}
+
+.indicador dt {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.indicador dd {
+  margin-top: var(--espaco-1);
+  font-size: var(--texto-lg);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+
+.indicadorDestaque {
+  border-color: transparent;
+  background: linear-gradient(135deg, #0b4f8a, #0c6a80);
+  color: #fff;
+}
+
+.indicadorDestaque dt {
+  color: rgb(255 255 255 / 0.85);
+}
+
+/* ---------- Painéis ---------- */
+
+.colunas {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  align-items: start;
+  gap: var(--espaco-4);
+  margin-bottom: var(--espaco-5);
+}
+
+.painel {
+  padding: var(--espaco-5);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-sm);
+}
+
+.tituloSecao {
+  margin-bottom: var(--espaco-4);
+  font-size: var(--texto-lg);
+  font-weight: 700;
+}
+
+.contador {
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+}
+
+.dados {
+  display: grid;
+  gap: var(--espaco-3);
+}
+
+.dado {
+  display: grid;
+  grid-template-columns: minmax(120px, 38%) minmax(0, 1fr);
+  gap: var(--espaco-3);
+  padding-bottom: var(--espaco-3);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.dado:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.dado dt {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-sm);
+}
+
+.dado dd {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.vazio {
+  color: var(--cor-texto-suave);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.mono {
+  font-family: var(--fonte-mono);
+  font-size: var(--texto-sm);
+}
+
+.agencia {
+  display: grid;
+  gap: var(--espaco-4);
+}
+
+.iconeAgencia {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--raio-lg);
+  background: var(--cor-destaque-suave);
+  color: var(--cor-destaque);
+}
+
+/* ---------- Contas ---------- */
+
+.listaContas {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: var(--espaco-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.semContas {
+  padding: var(--espaco-5);
+  border: 2px dashed var(--cor-borda);
+  border-radius: var(--raio-lg);
+  color: var(--cor-texto-suave);
+  text-align: center;
+}
+
+/* ---------- Responsividade ---------- */
+
+@media (max-width: 860px) {
+  .colunas {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .painel {
+    padding: var(--espaco-4);
+  }
+
+  .dado {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
