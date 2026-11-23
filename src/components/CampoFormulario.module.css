@@ -1,0 +1,64 @@
+.campo {
+  display: grid;
+  align-content: start;
+  gap: var(--espaco-1);
+}
+
+.largo {
+  grid-column: 1 / -1;
+}
+
+.rotulo {
+  font-size: var(--texto-sm);
+  font-weight: 600;
+}
+
+.obrigatorio {
+  color: var(--cor-erro);
+}
+
+.opcional {
+  color: var(--cor-texto-suave);
+  font-weight: 400;
+}
+
+/* Estilo comum para os campos colocados dentro do componente */
+.campo :is(input, select, textarea) {
+  width: 100%;
+  min-height: 46px;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-borda-forte);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie);
+  font-size: var(--texto-md);
+  transition:
+    border-color var(--transicao),
+    box-shadow var(--transicao);
+}
+
+.campo :is(input, select, textarea):hover {
+  border-color: var(--cor-primaria);
+}
+
+.campo :is(input, select, textarea):focus {
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px var(--cor-primaria-suave);
+}
+
+.comErro :is(input, select, textarea) {
+  border-color: var(--cor-erro);
+}
+
+.dica {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-xs);
+}
+
+.erro {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  color: var(--cor-erro);
+  font-size: var(--texto-sm);
+  font-weight: 500;
+}

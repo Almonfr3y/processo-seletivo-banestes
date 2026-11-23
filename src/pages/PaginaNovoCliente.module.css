@@ -1,0 +1,52 @@
+.formulario {
+  display: grid;
+  gap: var(--espaco-5);
+  max-width: 820px;
+}
+
+.grupo {
+  margin: 0;
+  padding: var(--espaco-5);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-sm);
+  min-width: 0; /* evita que o fieldset estoure a largura no celular */
+}
+
+.legenda {
+  float: left; /* faz a legenda se comportar como um título dentro da caixa */
+  width: 100%;
+  margin-bottom: var(--espaco-4);
+  padding: 0;
+  font-size: var(--texto-lg);
+  font-weight: 700;
+}
+
+.grade {
+  clear: both;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espaco-4);
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--espaco-3);
+}
+
+@media (max-width: 600px) {
+  .grupo {
+    padding: var(--espaco-4);
+  }
+
+  .grade {
+    grid-template-columns: 1fr;
+  }
+
+  .acoes > * {
+    flex: 1;
+  }
+}
