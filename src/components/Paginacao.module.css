@@ -1,0 +1,80 @@
+.paginacao {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-2);
+  margin-top: var(--espaco-5);
+}
+
+.numeros {
+  display: flex;
+  gap: var(--espaco-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--espaco-1);
+  min-width: 44px;
+  min-height: 44px;
+  padding: var(--espaco-2) var(--espaco-3);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-md);
+  background: var(--cor-superficie);
+  font-size: var(--texto-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--transicao),
+    border-color var(--transicao);
+}
+
+.botao:hover:not(:disabled) {
+  border-color: var(--cor-primaria);
+  background: var(--cor-primaria-suave);
+}
+
+.botao:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.numero {
+  padding-inline: var(--espaco-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.numero[aria-current='page'] {
+  border-color: var(--cor-primaria);
+  background: var(--cor-primaria);
+  color: var(--cor-sobre-primaria);
+}
+
+.reticencias {
+  display: grid;
+  place-items: center;
+  min-width: 24px;
+  color: var(--cor-texto-suave);
+}
+
+/* Em telas estreitas, as setas ficam só com ícone para caber tudo em uma linha */
+@media (max-width: 520px) {
+  .rotuloSeta {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .botao {
+    min-width: 40px;
+    padding-inline: var(--espaco-2);
+  }
+}

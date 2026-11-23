@@ -1,0 +1,119 @@
+.cartao {
+  position: relative; /* referência para o link "esticado" */
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1.1fr) auto;
+  align-items: center;
+  gap: var(--espaco-4);
+  padding: var(--espaco-4);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-lg);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra-sm);
+  transition:
+    border-color var(--transicao),
+    box-shadow var(--transicao),
+    transform var(--transicao);
+}
+
+.cartao:hover {
+  border-color: var(--cor-primaria);
+  box-shadow: var(--sombra-md);
+  transform: translateY(-1px);
+}
+
+/* Quando o link recebe foco pelo teclado, destacamos o cartão inteiro */
+.cartao:has(.link:focus-visible) {
+  outline: 3px solid var(--cor-foco);
+  outline-offset: 2px;
+}
+
+.identificacao {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.nome {
+  font-size: var(--texto-md);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.link {
+  color: var(--cor-texto);
+  text-decoration: none;
+}
+
+.link:focus-visible {
+  outline: none; /* o contorno é aplicado no cartão */
+}
+
+/* O pseudo-elemento cobre o cartão todo, tornando-o clicável */
+.link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.documento {
+  color: var(--cor-texto-suave);
+  font-family: var(--fonte-mono);
+  font-size: var(--texto-sm);
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1);
+  margin-top: var(--espaco-1);
+}
+
+.dados {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 0.6fr;
+  gap: var(--espaco-3);
+}
+
+.dados dt {
+  color: var(--cor-texto-suave);
+  font-size: var(--texto-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.dados dd {
+  font-size: var(--texto-sm);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.semAgencia {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-1);
+  color: var(--cor-alerta);
+}
+
+.seta {
+  color: var(--cor-texto-suave);
+}
+
+/* ---------- Telas médias e pequenas: o cartão empilha ---------- */
+
+@media (max-width: 760px) {
+  .cartao {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .dados {
+    grid-column: 1 / -1;
+    padding-top: var(--espaco-3);
+    border-top: 1px solid var(--cor-borda);
+  }
+
+  .seta {
+    display: none;
+  }
+}
